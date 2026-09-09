@@ -3,106 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sitio académico sobre estructura de computadores, redes de comunicaciones e investigación de ciberdelitos.">
-  <title>Estructura de Computadores y Redes | Gabriel Carrera</title>
+  <meta name="description" content="Guía interactiva sobre arquitectura de computadores, redes y ciberinvestigación.">
+  <title>Arquitectura, Redes y Ciberinvestigación</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header" id="inicio">
     <nav class="navbar" aria-label="Navegación principal">
-      <a class="brand" href="#inicio" aria-label="Ir al inicio">
-        <span class="brand-mark" aria-hidden="true">⌬</span>
-        <span>GABRIEL<span class="brand-accent">.TECH</span></span>
-      </a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
-        <span></span><span></span><span></span>
-      </button>
+      <a class="brand" href="#inicio"><span class="brand-mark">⌬</span><span>CYBER<span class="accent">.LAB</span></span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú"><span></span><span></span><span></span></button>
       <div class="nav-links" id="nav-links">
-        <a href="#presentacion">Presentación</a>
-        <a href="#computadores">Computadores</a>
-        <a href="#redes">Redes</a>
-        <a href="#forense">Ciberdelitos</a>
-        <button class="print-button" type="button" id="print-button">🖨 Imprimir página</button>
+        <a href="#modulo-1">Módulo 1</a><a href="#modulo-2">Módulo 2</a><a href="#modulo-3">Módulo 3</a><a href="#conclusiones">Conclusiones</a>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Cambiar tema"><span aria-hidden="true">◐</span><span class="theme-label">Modo oscuro</span></button>
+        <button class="export-button" id="export-button" type="button">↓ Exportar a PDF</button>
       </div>
     </nav>
-
     <div class="hero section-shell">
       <div class="hero-copy reveal">
-        <p class="eyebrow"><span class="status-dot"></span> INFORMÁTICA BÁSICA / INVESTIGACIÓN DIGITAL</p>
-        <h1>Estructura de <em>Computadores</em> y Redes de Comunicaciones</h1>
-        <p class="hero-subtitle">Aplicación de los conocimientos tecnológicos en la Investigación de Ciberdelitos</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#computadores">Explorar módulos <span aria-hidden="true">→</span></a>
-          <a class="text-link" href="#forense">Ver aplicación forense <span aria-hidden="true">↗</span></a>
-        </div>
+        <p class="eyebrow"><span class="status-dot"></span> RUTA DE APRENDIZAJE / 03 MÓDULOS</p>
+        <h1>Fundamentos de <em>Arquitectura</em> de Computadores, Redes y Ciberinvestigación</h1>
+        <p class="hero-subtitle">Una visión integral de los sistemas computacionales y las comunicaciones aplicadas a la investigación de ciberdelitos.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#modulo-1">Comenzar recorrido <span>→</span></a><span class="hero-note">Contenido académico<br><strong>Interactivo y visual</strong></span></div>
       </div>
-      <div class="hero-visual reveal" aria-label="Ilustración de una red informática">
-        <div class="network-orbit orbit-one"></div>
-        <div class="network-orbit orbit-two"></div>
-        <div class="network-grid"></div>
-        <div class="core-chip"><span>CPU</span><strong>01</strong></div>
-        <div class="node node-top"><span>RAM</span></div>
-        <div class="node node-right"><span>NET</span></div>
-        <div class="node node-bottom"><span>LOG</span></div>
-        <div class="node node-left"><span>SEC</span></div>
-        <div class="signal signal-a"></div><div class="signal signal-b"></div>
+      <div class="hero-visual reveal" aria-label="Esquema animado de una red y un procesador">
+        <div class="network-grid"></div><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="core-chip"><small>CORE / 01</small><strong>CPU</strong></div>
+        <span class="node node-top">RAM</span><span class="node node-right">NET</span><span class="node node-bottom">LOG</span><span class="node node-left">SEC</span>
       </div>
-      <div class="hero-meta reveal">
-        <span>01 / CONCEPTOS CLAVE</span><span>HARDWARE + REDES + FORENSE</span><span>QUITO, ECUADOR</span>
-      </div>
+      <div class="hero-meta"><span>01 / SISTEMAS</span><span>HARDWARE + COMUNICACIONES + FORENSE</span><span>ACTUALIZADO <b id="hero-year"></b></span></div>
     </div>
   </header>
-
-  <main>
+  <main id="pdf-content">
     <section class="intro section-shell reveal" id="presentacion">
       <div class="section-kicker"><span>00</span><span>CONTEXTO</span></div>
-      <div class="intro-grid">
-        <h2>Entender la máquina es el primer paso para entender la evidencia.</h2>
-        <div class="intro-text">
-          <p>La estructura interna de un computador explica cómo se procesan, almacenan y transmiten los datos. Las redes de comunicación, por su parte, conectan personas, servicios y dispositivos en un ecosistema digital.</p>
-          <p>En informática forense, este conocimiento permite identificar dónde puede existir una evidencia, cómo conservarla y cómo interpretar sus rastros sin alterar su integridad.</p>
-        </div>
-      </div>
+      <div class="intro-grid"><h2>Entender la máquina es el primer paso para entender la evidencia.</h2><div class="intro-text"><p>Un computador no es una caja aislada: es un sistema de componentes que procesa, almacena y comunica información. Las redes amplían ese sistema y hacen posible el intercambio de datos.</p><p>Esta guía conecta los fundamentos técnicos con la informática forense para leer los rastros digitales con precisión.</p></div></div>
     </section>
-
-    <section class="module module-dark" id="computadores">
-      <div class="section-shell">
-        <div class="module-heading reveal"><div><p class="section-kicker light"><span>01</span><span>ARQUITECTURA</span></p><h2>Arquitectura y estructura<br><em>de computadores</em></h2></div><p class="module-number">01—03</p></div>
-        <article class="cpu-panel reveal">
-          <div class="cpu-intro"><span class="icon-box">▣</span><div><h3>La CPU: centro de procesamiento</h3><p>La Unidad Central de Procesamiento interpreta y ejecuta las instrucciones de los programas. Coordina el flujo de datos entre los componentes del sistema.</p></div></div>
-          <div class="cpu-diagram">
-            <div class="cpu-core"><span>PROCESADOR</span><strong>CPU</strong><small>Unidad Central de Procesamiento</small></div>
-            <div class="cpu-part part-alu"><b>01</b><strong>ALU</strong><span>Operaciones aritméticas y lógicas</span></div>
-            <div class="cpu-part part-uc"><b>02</b><strong>UC</strong><span>Controla y coordina instrucciones</span></div>
-            <div class="cpu-part part-reg"><b>03</b><strong>REGISTROS</strong><span>Datos temporales de alta velocidad</span></div>
-          </div>
-        </article>
-        <div class="subsection-heading reveal"><div><p class="mini-label">PROCESAMIENTO</p><h3>El ciclo de una instrucción</h3></div><p>El procesador repite esta secuencia millones de veces por segundo.</p></div>
-        <div class="cycle-grid">
-          <article class="cycle-card reveal"><span class="card-index">01</span><span class="big-icon">⌁</span><h3>Fetch</h3><p>La unidad de control busca la siguiente instrucción en la memoria.</p></article>
-          <article class="cycle-card reveal"><span class="card-index">02</span><span class="big-icon">◇</span><h3>Decode</h3><p>La instrucción se interpreta para determinar la operación requerida.</p></article>
-          <article class="cycle-card reveal"><span class="card-index">03</span><span class="big-icon">↯</span><h3>Execute</h3><p>La ALU o el componente correspondiente ejecuta la operación.</p></article>
-        </div>
-        <div class="memory-section reveal"><div><p class="mini-label">ALMACENAMIENTO</p><h3>Jerarquía de memoria</h3><p class="muted-text">A mayor cercanía al procesador, mayor velocidad y menor capacidad.</p></div><div class="memory-stack"><div class="memory-level level-register"><span>01</span><strong>REGISTROS</strong><small>Máxima velocidad · mínima capacidad</small></div><div class="memory-level level-cache"><span>02</span><strong>MEMORIA CACHÉ</strong><small>Acceso muy rápido a datos frecuentes</small></div><div class="memory-level level-ram"><span>03</span><strong>MEMORIA RAM</strong><small>Espacio de trabajo temporal</small></div><div class="memory-level level-storage"><span>04</span><strong>ALMACENAMIENTO SECUNDARIO</strong><small>Gran capacidad · persistencia de datos</small></div></div></div>
-      </div>
-    </section>
-
-    <section class="module network-module section-shell" id="redes">
-      <div class="module-heading reveal"><div><p class="section-kicker"><span>02</span><span>CONECTIVIDAD</span></p><h2>Fundamentos de<br><em>redes de comunicaciones</em></h2></div><p class="module-number">02—03</p></div>
-      <div class="network-intro-grid reveal"><p class="lead-text">Una red es un conjunto de dispositivos conectados para compartir información, recursos y servicios. Su diseño determina cómo circulan los datos y cómo se puede rastrear ese recorrido.</p><div class="stat-strip"><div><strong>IP</strong><span>Dirección lógica</span></div><div><strong>MAC</strong><span>Identidad física</span></div><div><strong>OSI</strong><span>Modelo de comunicación</span></div></div></div>
-      <div class="address-grid"><article class="address-card ip-card reveal"><div class="address-top"><span class="icon-box blue">⌘</span><span class="tag">CAPA DE RED</span></div><h3>Dirección IP</h3><p>Identificador lógico asignado a un dispositivo para localizarlo y enrutar paquetes dentro de una red.</p><div class="address-example">192.168.001.024 <span>IPv4</span></div><strong class="address-label">DIRECCIÓN LÓGICA</strong></article><article class="address-card mac-card reveal"><div class="address-top"><span class="icon-box orange">◈</span><span class="tag">CAPA DE ENLACE</span></div><h3>Dirección MAC</h3><p>Identificador físico único de la interfaz de red. Está asociado al hardware del dispositivo.</p><div class="address-example">A4:5E:60:1B:9C:7F <span>48 bits</span></div><strong class="address-label">DIRECCIÓN FÍSICA</strong></article></div>
-      <div class="topology-layout reveal"><div class="topology-copy"><p class="mini-label">DISEÑO DE RED</p><h3>Topologías principales</h3><p>La topología describe cómo se organizan los nodos. Cada elección tiene un impacto operacional en costos, disponibilidad y diagnóstico.</p><div class="topology-tabs" role="tablist"><button class="topology-tab active" type="button" data-topology="star">Estrella</button><button class="topology-tab" type="button" data-topology="ring">Anillo</button><button class="topology-tab" type="button" data-topology="bus">Bus</button></div></div><div class="topology-visual"><div class="topology-diagram diagram-star active" data-diagram="star"><span class="router">R</span><i class="t-node n1">01</i><i class="t-node n2">02</i><i class="t-node n3">03</i><i class="t-node n4">04</i><div class="topology-info"><strong>Estrella</strong><span>Un nodo central conecta todos los dispositivos.</span><b>ALTA CONTROLABILIDAD</b></div></div><div class="topology-diagram diagram-ring" data-diagram="ring"><span class="router">R</span><i class="t-node n1">01</i><i class="t-node n2">02</i><i class="t-node n3">03</i><i class="t-node n4">04</i><div class="topology-info"><strong>Anillo</strong><span>Los dispositivos forman un circuito cerrado.</span><b>FLUJO SECUENCIAL</b></div></div><div class="topology-diagram diagram-bus" data-diagram="bus"><span class="bus-line"></span><i class="t-node n1">01</i><i class="t-node n2">02</i><i class="t-node n3">03</i><i class="t-node n4">04</i><div class="topology-info"><strong>Bus</strong><span>Todos los nodos comparten un canal principal.</span><b>BAJO COSTO INICIAL</b></div></div></div></div>
-    </section>
-
-    <section class="module forensics-module" id="forense">
-      <div class="section-shell"><div class="module-heading reveal"><div><p class="section-kicker light"><span>03</span><span>APLICACIÓN</span></p><h2>Investigación forense<br><em>y de ciberdelitos</em></h2></div><p class="module-number">03—03</p></div><p class="forensic-lead reveal">Cada componente puede convertirse en una fuente de evidencia. La investigación técnica conecta los rastros dispersos para reconstruir qué ocurrió, cuándo y cómo.</p><div class="evidence-grid"><article class="evidence-card reveal"><div class="evidence-number">01</div><span class="evidence-icon">▤</span><h3>Memoria RAM</h3><p>Conserva procesos activos, conexiones, claves temporales y artefactos que pueden desaparecer al apagar el equipo.</p><span class="evidence-type">EVIDENCIA VOLÁTIL</span></article><article class="evidence-card reveal"><div class="evidence-number">02</div><span class="evidence-icon">▥</span><h3>Registros del sistema</h3><p>Documentan accesos, errores, instalaciones y eventos. Su análisis ayuda a establecer una línea de tiempo.</p><span class="evidence-type">LÍNEA DE TIEMPO</span></article><article class="evidence-card reveal"><div class="evidence-number">03</div><span class="evidence-icon">⌁</span><h3>Tráfico de red</h3><p>Permite observar comunicaciones, destinos, protocolos y patrones que revelan actividad anómala.</p><span class="evidence-type">RASTRO DE COMUNICACIÓN</span></article></div><div class="live-forensics reveal"><div class="live-badge"><span class="status-dot"></span> LIVE FORENSICS</div><div><h3>El análisis forense en vivo</h3><p>Consiste en examinar un sistema mientras está encendido, priorizando los datos más volátiles. Requiere criterio técnico, documentación rigurosa y procedimientos que preserven la integridad de la evidencia.</p></div><span class="live-arrow">↗</span></div></div>
-    </section>
-
-    <section class="student-section section-shell reveal" id="estudiante"><div class="student-card"><div><p class="section-kicker"><span>04</span><span>AUTORÍA</span></p><h2>Conocimiento técnico<br>con propósito.</h2><p>Este trabajo integra conceptos de hardware y redes con su aplicación en la investigación digital.</p></div><div class="student-data"><div><span>ESTUDIANTE</span><strong>Gabriel Carrera</strong></div><div><span>TELÉFONO</span><strong>099 572 5799</strong></div><div><span>UBICACIÓN</span><strong>Quito, Ecuador</strong></div></div></div></section>
-  </main>
-
-  <footer class="site-footer"><div class="section-shell footer-grid"><div class="brand footer-brand"><span class="brand-mark">⌬</span><span>GABRIEL<span class="brand-accent">.TECH</span></span></div><p>Informática Básica<br>e Investigación de Ciberdelitos</p><p><strong>Gabriel Carrera</strong><br><span id="current-year">2026</span> · Estructura de Computadores y Redes</p></div></footer>
-  <a class="back-to-top" href="#inicio" aria-label="Volver al inicio">↑</a>
-  <script src="script.js"></script>
-</body>
-</html>
+    <section class="module module-dark" id="modulo-1"><div class="section-shell"><div class="module-heading reveal"><div><p class="section-kicker light"><span>01</span><span>ARQUITECTURA</span></p><h2>Módulo 1: Arquitectura y estructura <em>de computadores</em></h2></div><span class="module-number">01—03</span></div><p class="module-lead reveal">Conocer la arquitectura interna permite comprender cómo una instrucción se transforma en una operación y dónde quedan los datos durante el proceso.</p><div class="component-grid"><article class="component-card reveal"><span class="card-number">01</span><span class="component-icon">⌁</span><h3>ALU</h3><p>Unidad Aritmético-Lógica. Ejecuta operaciones aritméticas, comparaciones y decisiones lógicas.</p><span class="card-tag">CÁLCULO / LÓGICA</span></article><article class="component-card reveal"><span class="card-number">02</span><span class="component-icon">◈</span><h3>Unidad de Control</h3><p>Coordina el procesador, interpreta las instrucciones y controla el momento de cada operación.</p><span class="card-tag">COORDINACIÓN</span></article><article class="component-card reveal"><span class="card-number">03</span><span class="component-icon">▦</span><h3>Registros</h3><p>Almacenan temporalmente operandos, direcciones y resultados con acceso de muy alta velocidad.</p><span class="card-tag">DATOS INMEDIATOS</span></article></div><div class="subsection-heading reveal"><div><p class="mini-label">PROCESAMIENTO</p><h3>Ciclo de instrucción</h3></div><p>La CPU repite este recorrido millones de veces por segundo.</p></div><div class="cycle-wrap reveal"><div class="cycle-steps"><div class="cycle-step active" data-step="0"><span>01</span><strong>FETCH</strong><small>Obtención desde memoria</small></div><i>→</i><div class="cycle-step" data-step="1"><span>02</span><strong>DECODE</strong><small>Interpretación de la orden</small></div><i>→</i><div class="cycle-step" data-step="2"><span>03</span><strong>EXECUTE</strong><small>Ejecución de la operación</small></div></div><button class="button outline-button" id="simulate-button" type="button">▶ Iniciar simulación</button><p class="simulation-status" id="simulation-status" aria-live="polite">Listo para recorrer el ciclo.</p></div><div class="memory-section reveal"><div><p class="mini-label">JERARQUÍA</p><h3>Memoria: velocidad frente a capacidad</h3><p class="muted-text">La cercanía al procesador aumenta la velocidad, pero reduce la capacidad disponible.</p></div><div class="memory-stack"><button class="memory-level level-register" type="button"><b>01</b><strong>REGISTROS</strong><span>Máxima velocidad · mínima capacidad · dentro de la CPU</span></button><button class="memory-level level-cache" type="button"><b>02</b><strong>MEMORIA CACHÉ</strong><span>Datos frecuentes · acceso muy rápido</span></button><button class="memory-level level-ram" type="button"><b>03</b><strong>MEMORIA RAM</strong><span>Espacio de trabajo temporal · volátil</span></button><button class="memory-level level-storage" type="button"><b>04</b><strong>ALMACENAMIENTO SECUNDARIO</strong><span>Gran capacidad · persistencia de datos</span></button></div></div></div></section>
+    <section class="module network-module" id="modulo-2"><div class="section-shell"><div class="module-heading reveal"><div><p class="section-kicker"><span>02</span><span>CONECTIVIDAD</span></p><h2>Módulo 2: Fundamentos de <em>redes de comunicaciones</em></h2></div><span class="module-number">02—03</span></div><div class="network-intro-grid reveal"><p class="lead-text">Una red conecta computadoras, servidores y dispositivos para compartir información, recursos y servicios. Sus componentes definen cómo viajan los datos.</p><div class="stat-strip"><div><strong>IP</strong><span>Dirección lógica</span></div><div><strong>MAC</strong><span>Identidad física</span></div><div><strong>OSI</strong><span>Modelo de comunicación</span></div></div></div><div class="device-grid reveal"><div><span>▣</span><strong>Computadoras</strong><small>Generan y consumen datos</small></div><div><span>▤</span><strong>Servidores</strong><small>Ofrecen servicios y recursos</small></div><div><span>◇</span><strong>Routers</strong><small>Conectan redes diferentes</small></div><div><span>╋</span><strong>Switches</strong><small>Conectan nodos locales</small></div><div><span>⌁</span><strong>Cables</strong><small>Transportan señales</small></div><div><span>◌</span><strong>Wi-Fi</strong><small>Conectividad inalámbrica</small></div></div><div class="address-grid"><article class="address-card ip-card reveal"><div class="address-top"><span class="icon-box">⌘</span><span class="tag">CAPA DE RED</span></div><h3>Dirección IP</h3><p>Dirección lógica que identifica un dispositivo y permite la comunicación entre redes. Puede cambiar.</p><div class="address-example">192.168.1.24 <span>IPv4</span></div></article><article class="address-card mac-card reveal"><div class="address-top"><span class="icon-box">◈</span><span class="tag">CAPA DE ENLACE</span></div><h3>Dirección MAC</h3><p>Dirección física asociada a la interfaz de red, generalmente única y utilizada dentro de una LAN.</p><div class="address-example">A4:5E:60:1B:9C:7F <span>48 bits</span></div></article></div><div class="comparison reveal"><h3>IP vs. MAC: dos identidades, dos propósitos</h3><div class="table-scroll"><table><thead><tr><th>Característica</th><th>Dirección IP</th><th>Dirección MAC</th></tr></thead><tbody><tr><th>Tipo</th><td>Lógica</td><td>Física</td></tr><tr><th>Función</th><td>Identificación en red</td><td>Identificación del dispositivo</td></tr><tr><th>Puede cambiar</th><td>Sí</td><td>Generalmente no</td></tr><tr><th>Nivel</th><td>Red</td><td>Enlace de datos</td></tr></tbody></table></div></div><div class="topology-layout reveal"><div class="topology-copy"><p class="mini-label">DISEÑO DE RED</p><h3>Topologías físicas</h3><p>Selecciona una topología para explorar su forma, sus implicaciones y su impacto operativo.</p><div class="topology-tabs" role="tablist"><button class="topology-tab active" type="button" data-topology="star">Estrella</button><button class="topology-tab" type="button" data-topology="ring">Anillo</button><button class="topology-tab" type="button" data-topology="bus">Bus</button></div></div><div class="topology-panel"><div class="topology-diagram diagram-star active" data-diagram="star"><div class="topology-shape star-shape"><span class="hub">SW</span><i>PC</i><i>PC</i><i>PC</i><i>PC</i></div><div class="topology-info"><strong>Estrella</strong><span>Un switch central conecta todos los nodos.</span><b>+ Fácil de administrar · − Depende del nodo central</b></div></div><div class="topology-diagram diagram-ring" data-diagram="ring"><div class="topology-shape ring-shape"><i>PC</i><i>PC</i><i>PC</i><i>PC</i></div><div class="topology-info"><strong>Anillo</strong><span>Los dispositivos forman un circuito cerrado.</span><b>+ Flujo ordenado · − Una falla puede interrumpir el anillo</b></div></div><div class="topology-diagram diagram-bus" data-diagram="bus"><div class="topology-shape bus-shape"><span></span><i>PC</i><i>PC</i><i>PC</i><i>PC</i></div><div class="topology-info"><strong>Bus</strong><span>Todos comparten un cable principal.</span><b>+ Bajo costo · − El canal es un punto crítico</b></div></div></div></div></div></section>
+    <section class="module module-dark forensics-module" id="modulo-3"><div class="section-shell"><div class="module-heading reveal"><div><p class="section-kicker light"><span>03</span><span>APLICACIÓN FORENSE</span></p><h2>Módulo 3: Investigación <em>de ciberdelitos</em></h2></div><span class="module-number">03—03</span></div><p class="forensic-lead reveal">La memoria RAM, los registros del procesador y el tráfico de red muestran distintos momentos de la actividad digital. Juntos ayudan a reconstruir qué ocurrió y preservar evidencia.</p><div class="evidence-grid"><article class="evidence-card reveal"><span class="evidence-number">01</span><span class="evidence-icon">▤</span><h3>Memoria RAM</h3><p>Contiene información temporal, procesos activos, programas en ejecución y conexiones. Es evidencia volátil que puede desaparecer al apagar el equipo.</p><span class="evidence-type">CAPTURAR PRIMERO</span></article><article class="evidence-card reveal"><span class="evidence-number">02</span><span class="evidence-icon">▥</span><h3>Registros del procesador</h3><p>Reflejan el estado inmediato de la ejecución: operandos, direcciones y resultados. Dan contexto técnico sobre las instrucciones en curso.</p><span class="evidence-type">ESTADO DE EJECUCIÓN</span></article><article class="evidence-card reveal"><span class="evidence-number">03</span><span class="evidence-icon">⌁</span><h3>Tráfico de red</h3><p>Relaciona dispositivos, IP, conexiones y transferencias. Permite identificar patrones sospechosos y obtener evidencia digital.</p><span class="evidence-type">RECONSTRUIR COMUNICACIONES</span></article></div><div class="forensic-flow reveal"><div class="flow-node"><b>RAM</b><span>Lo que estaba ocurriendo</span></div><i>+</i><div class="flow-node"><b>CPU</b><span>Cómo se procesaba</span></div><i>+</i><div class="flow-node"><b>RED</b><span>Con quién se comunicaba</span></div><strong class="flow-result">→<br><small>CONTEXTO FORENSE</small></strong></div></div></section>
++    <section class="conclusions section-shell reveal" id="conclusiones"><div class="section-kicker"><span>04</span><span>SÍNTESIS</span></div><div class="conclusion-grid"><div><h2>La evidencia digital tiene una arquitectura.</h2><p>Comprender el hardware revela dónde nacen los datos. Comprender las redes permite seguir su recorrido. La informática forense une ambas perspectivas para analizar, documentar y preservar los rastros con rigor técnico.</p></div><div class="conclusion-list"><div><span>01</span><strong>Arquitectura</strong><small>Explica el procesamiento y el almacenamiento.</small></div><div><span>02</span><strong>Redes</strong><small>Revelan conexiones, rutas y comunicaciones.</small></div><div><span>03</span><strong>Investigación</strong><small>Convierte rastros técnicos en contexto verificable.</small></div></div></div></section>
++  </main>
++  <footer class="site-footer"><div class="section-shell footer-grid"><div class="brand"><span class="brand-mark">⌬</span><span>CYBER<span class="accent">.LAB</span></span></div><p>Sitio web educativo sobre Arquitectura de Computadores, Redes de Comunicaciones e Investigación de Ciberdelitos.</p><p><strong>© <span id="current-year"></span></strong><br>Aprender. Analizar. Preservar.</p></div></footer>
++  <a class="back-to-top" href="#inicio" aria-label="Volver al inicio">↑</a>
++  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script><script src="script.js"></script>
++</body>
++</html>
